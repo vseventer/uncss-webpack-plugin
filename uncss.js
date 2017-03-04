@@ -62,7 +62,9 @@ class UnCSSPlugin {
           chunk.modules.forEach((module) => {
             if ('fileDependencies' in module) {
               // Obtain list of CSS and HTML files.
-              const css = this._findByExtName(module.fileDependencies, '.css');
+              const css = this._findByExtName(module.fileDependencies, [
+                '.css', '.less', '.sass', '.scss'
+              ]);
               const html = this._findByExtName(module.fileDependencies, '.html');
 
               // Update dependency tree. Note the CSS file must be a separate
@@ -101,7 +103,9 @@ class UnCSSPlugin {
   }
 
   _findByExtName (list, extname) {
-    return list.filter((filename) => path.extname(filename) === extname);
+    return list.filter((filename) => {
+      return -1 !== extname.indexOf(path.extname(filename))
+    });
   }
 
   _uncss (css, html) {
