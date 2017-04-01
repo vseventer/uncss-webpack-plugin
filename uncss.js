@@ -38,7 +38,6 @@ const uncss = require('uncss'); // May only be loaded after patching jsdom.
 
 // Define the UnCSS plugin.
 class UnCSSPlugin {
-
   constructor (options) {
     this.options = Object.assign({ }, options);
   }
@@ -104,7 +103,7 @@ class UnCSSPlugin {
 
   _findByExtName (list, extname) {
     return list.filter((filename) => {
-      return -1 !== extname.indexOf(path.extname(filename))
+      return extname.indexOf(path.extname(filename)) !== -1;
     });
   }
 
@@ -124,7 +123,6 @@ class UnCSSPlugin {
       });
     });
   }
-
 }
 
 // Exports.
