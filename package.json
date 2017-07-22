@@ -1,6 +1,6 @@
 {
   "name"        : "uncss-webpack-plugin",
-  "version"     : "0.1.1",
+  "version"     : "0.2.0",
   "description" : "Remove unused CSS using uncss in Webpack.",
   "keywords"    : [ "css", "tree-shaking", "uncss", "webpack", "webpack-plugin" ],
   "author"      : "Mark van Seventer <mark@vseventer.com> (https://www.vseventer.com)",
@@ -12,12 +12,12 @@
   "scripts"     : { "pretest": "semistandard | snazzy" },
   "dependencies": {
     "object.entries" : "1.0.x",
-    "uncss"          : "vseventer/uncss#jsdom",
-    "webpack-sources": "0.2.x"
+    "uncss"          : "0.15.x",
+    "webpack-sources": "1.0.x"
   },
   "devDependencies": {
-    "semistandard" : "10.0.x",
-    "snazzy"       : "6.0.x"
+    "semistandard" : "11.0.x",
+    "snazzy"       : "7.0.x"
   },
   "engines": { "node": ">=4.x" }
 }

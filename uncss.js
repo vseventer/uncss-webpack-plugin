@@ -58,7 +58,7 @@ class UnCSSPlugin {
       const dependencyTree = { };
       compilation.plugin('optimize-chunk-assets', (chunks, callback) => {
         chunks.forEach((chunk) => {
-          chunk.modules.forEach((module) => {
+          chunk.forEachModule((module) => {
             if ('fileDependencies' in module) {
               // Obtain list of CSS and HTML files.
               const css = this._findByExtName(module.fileDependencies, [
